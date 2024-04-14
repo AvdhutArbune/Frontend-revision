@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        #input1{
+            height: 200px;
+            width: 100px;
+            background-color: whitesmoke;
+            color:black;
+
+        }
+        #input2{
+            height: 200px;
+            width: 100px;
+            background-color: whitesmoke;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="First Number" id="input1">
+    <input type="text" placeholder="Second Number" id="input2">
+    <button id="Addition" onclick="Calculation('Add')">Plus</button>
+    <button id="Subtraction" onclick="Calculation('Subtract')">Subtract</button>
+    <button id="Multiplication" onclick="Calculation('Multiply')">Multiply</button>
+    <button id="Divide" onclick="Calculation('Divide')">Divide</button>
+    <h2 id="answer">Result :</h2>
+</body>
+</html>
+<script>
+    function Calculation(operation){
+        let val1=Number(document.getElementById("input1").value);
+        let val2=Number(document.getElementById("input2").value);
+        let result;
+        if(operation==='Add'){
+            result=val1+val2
+        }
+        else if(operation==='Subtract'){
+            result=val1-val2
+        }
+        else if(operation==='Multiply'){
+            result=val1 * val2
+        }
+        else if(operation==='Divide'){
+            if(val2!==0){
+                result= val1 / val2
+            }
+            else{
+                result="Cannot Devide By Zero"
+            }
+        }
+        document.getElementById('answer').innerText="Result :" + result
+    }
+</script>
